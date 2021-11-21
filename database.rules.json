@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "post": {
+      ".read": true,
+      "$postNumber": {
+        "dateAdded": { ".validate": true },
+        "backgroundColor": { ".validate": true },
+        "textColor": { ".validate": true },
+        "text": { ".validate": true },
+        "to": { ".validate": true },
+        "$other": { ".validate": false },
+        ".read": true,
+        ".write": "!data.exists()"
+      }
+    },
+    "$other": { ".validate": false }
+  }
+}

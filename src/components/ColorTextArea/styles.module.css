@@ -1,0 +1,29 @@
+.textWrapper {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.textWrapper textarea {
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 0;
+  font-size: 18px;
+  padding: 7px 7px 14px;
+  resize: none;
+  transition: background-color 200ms, color 50ms;
+  width: 100%;
+}
+
+.textWrapper textarea:focus {
+  outline: none;
+  outline-style: none;
+}
+
+.char {
+  bottom: 7px;
+  font-size: 10px;
+  opacity: 0.6;
+  position: absolute;
+  right: 7px;
+}

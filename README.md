@@ -1,2 +1,3 @@
-# little-library-message-board
-A message board for Pelham Parkway's Little Library
+# little library message board
+
+Source code for little library source code.
