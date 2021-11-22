@@ -40,7 +40,6 @@ const AllPost = () => {
   return (
     <div className={styles.random}>
       {allPost.map((post) => {
-        console.log({post})
         const [key, singlePost] = post;
         return (<UnsentBox
           key={key}
