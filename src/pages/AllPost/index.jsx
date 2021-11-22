@@ -14,6 +14,7 @@ const AllPost = () => {
   useEffect(() => {
     const postRref = ref(db, POST_MESSAGE_API);
     onValue(postRref, snapshot => {
+      console.log({snapshot: snapshot.val()})
       if (snapshot.val()) {
         const data = Object.entries(snapshot.val());
 
@@ -42,13 +43,14 @@ const AllPost = () => {
   return (
     <div className={styles.random}>
       {allPost.map((post) => {
+        console.log({post})
         const [key, singlePost] = post;
         return (<UnsentBox
           key={key}
           initBackgroundColor={singlePost.backgroundColor}
           initMessage={singlePost.text}
           initTextColor={singlePost.textColor}
-          initTo={singlePost.to}
+          initDate={singlePost.dateAdded}
           isDisabled={true}
         />)
       })}

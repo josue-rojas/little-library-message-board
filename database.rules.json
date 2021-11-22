@@ -7,7 +7,6 @@
         "backgroundColor": { ".validate": true },
         "textColor": { ".validate": true },
         "text": { ".validate": true },
-        "to": { ".validate": true },
         "$other": { ".validate": false },
         ".read": true,
         ".write": "!data.exists()"

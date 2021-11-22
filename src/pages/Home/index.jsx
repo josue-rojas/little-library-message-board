@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <UnsentBox sendCallBack={sendCallBack} />
+      <UnsentBox sendCallBack={sendCallBack} initDate={Date.now()} />
     </div>
   );
 };

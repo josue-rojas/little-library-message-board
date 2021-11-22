@@ -20,7 +20,7 @@ const UnsentBox = ({
   initBackgroundColor,
   initMessage,
   initTextColor,
-  initTo,
+  initDate,
   isDisabled,
   sendCallBack,
   textOnchange,
@@ -30,7 +30,7 @@ const UnsentBox = ({
     initBackgroundColor || randomColor()
   );
   const [textColor, textColorChange] = useState(initTextColor || randomColor());
-  const [toValue, toValueChange] = useState(initTo);
+  const [dateValue, dateValueChange] = useState(initDate);
   const [text, textChange] = useState(initMessage);
   const history = useHistory();
 
@@ -38,10 +38,10 @@ const UnsentBox = ({
     if (!!initMessage && initMessage !== text) textChange(initMessage);
   }, [initMessage, text]);
 
-  // if initto is define and it is not handle up the chain then it will become readonly
+  // if initDate is define and it is not handle up the chain then it will become readonly
   useEffect(() => {
-    if (!!initTo && initTo !== toValue) toValueChange(initTo);
-  }, [initTo, toValue]);
+    if (!!initDate && initDate !== dateValue) dateValueChange(initDate);
+  }, [initDate, dateValue]);
 
   useEffect(() => {
     if (!!initBackgroundColor && initBackgroundColor !== backgroundColor)
@@ -62,23 +62,21 @@ const UnsentBox = ({
   };
 
   const _toOnChange = nextValue => {
-    toValueChange(nextValue);
+    dateValueChange(nextValue);
     toOnChange && toOnChange(nextValue);
   };
 
   const sendData = () => {
     // TODO: make this more efficiencent or at least check when onchange ?!?!
     const isTextMin = text.trim().length > 0;
-    const isTotMin = toValue.trim().length > 0;
     !isDisabled &&
       sendCallBack &&
-      isTotMin &&
       isTextMin &&
       sendCallBack({
         backgroundColor: backgroundColor,
         textColor: textColor,
         text: text,
-        to: toValue
+        dateAdded: dateValue
       });
   };
 
@@ -96,8 +94,8 @@ const UnsentBox = ({
             id="sender"
             onChange={_ => _toOnChange(_.target.value)}
             type="text"
-            readOnly={isDisabled}
-            value={toValue}
+            readOnly={true}
+            value={new Date(dateValue).toDateString()}
           />
         </span>
         <DefaultColorPicker
@@ -136,14 +134,14 @@ const UnsentBox = ({
 
 UnsentBox.defaultProps = {
   initMessage: "",
-  initTo: ""
+  initDate: Date.now()
 };
 
 UnsentBox.propTypes = {
   initBackgroundColor: PropTypes.string,
   initMessage: PropTypes.string,
   initTextColor: PropTypes.string,
-  initTo: PropTypes.string,
+  initDate: PropTypes.string,
   isDisabled: PropTypes.bool,
   sendCallBack: PropTypes.func,
   textOnchange: PropTypes.func,
