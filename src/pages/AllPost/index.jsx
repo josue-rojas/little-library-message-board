@@ -4,17 +4,14 @@ import styles from "./styles.module.css";
 import { ref, onValue } from "firebase/database";
 import { database as db} from 'firebase.js'
 import { INIT_UNSENT_STATE, POST_MESSAGE_API } from "constants.js";
-import { useLocation } from "react-router-dom";
 import { constructColor } from "utils";
 
 const AllPost = () => {
   const [allPost, seAllPost] = useState([]);
-  const location = useLocation();
 
   useEffect(() => {
     const postRref = ref(db, POST_MESSAGE_API);
     onValue(postRref, snapshot => {
-      console.log({snapshot: snapshot.val()})
       if (snapshot.val()) {
         const data = Object.entries(snapshot.val());
 
@@ -38,7 +35,7 @@ const AllPost = () => {
         }]);
       }
     })
-  }, [location]);
+  }, []);
 
   return (
     <div className={styles.random}>
