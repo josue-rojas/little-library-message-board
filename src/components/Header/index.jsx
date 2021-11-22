@@ -17,7 +17,7 @@ const Header = () => {
               })}
               to="/"
             >
-              Home
+              New
             </Link>
           </li>
           <li>

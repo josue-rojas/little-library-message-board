@@ -91,7 +91,6 @@ const UnsentBox = ({
           readOnly={isDisabled}
         />
         <span className={styles.textWrapper}>
-          <label htmlFor="sender">To:</label>
           <input
             className={styles.toInput}
             id="sender"
