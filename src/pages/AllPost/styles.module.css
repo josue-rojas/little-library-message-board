@@ -1,7 +1,15 @@
 .random {
   align-items: center;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 71px);
+}
+
+.boxes {
+  align-items: center;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: calc(100vh - 71px);
+  margin-top: 20px;
 }

@@ -16,6 +16,7 @@ const Home = () => {
 
   const sendCallBack = data => {
     const key = guid();
+    console.log(data)
     data.backgroundColor = `#${rgbHex(data.backgroundColor)}`;
     data.textColor = `#${rgbHex(data.textColor)}`;
     set(ref(db, POST_MESSAGE_API + `/${key}`), data)
