@@ -141,7 +141,7 @@ UnsentBox.propTypes = {
   initBackgroundColor: PropTypes.string,
   initMessage: PropTypes.string,
   initTextColor: PropTypes.string,
-  initDate: PropTypes.string,
+  initDate: PropTypes.number,
   isDisabled: PropTypes.bool,
   sendCallBack: PropTypes.func,
   textOnchange: PropTypes.func,
