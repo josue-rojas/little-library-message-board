@@ -22,7 +22,7 @@ const About = () => {
   return <div className={styles.main}>
     <Text />
     <div className={styles.buttonWrapper}>
-      <Button appearance="primary" onClick={() => onClickLink('/')}>New Message</Button>
+      <Button appearance="primary" onClick={() => onClickLink('/new')}>New Message</Button>
     </div>
     <div>
       <Button appearance="primary" intent="warning" onClick={() => onClickLink("https://www.notion.so/Pelham-Parkway-s-Little-Library-95974c50a3b84027a98aeeeb3ca62f82")}>
