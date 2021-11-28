@@ -1,7 +1,7 @@
 .random {
   align-items: center;
   display: flex;
-  justify-content: center;
-  min-height: 100vh;
   flex-wrap: wrap;
+  justify-content: center;
+  min-height: calc(100vh - 71px);
 }

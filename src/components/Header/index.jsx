@@ -41,6 +41,16 @@ const Header = () => {
             </Link>
           </li>
           <li>
+            <Link
+              className={classNames({
+                [styles.active]: location.pathname === "/about"
+              })}
+              to={{ pathname: "/about", state: { refreshDate: false } }}
+              >
+              About
+            </Link>
+          </li>
+          <li>
             <a href="https://links.withcheesepls.com">
               #pelhamparkway
             </a>
