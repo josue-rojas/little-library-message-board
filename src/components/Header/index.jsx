@@ -13,6 +13,16 @@ const Header = () => {
           <li>
             <Link
               className={classNames({
+                [styles.active]: location.pathname === "/about"
+              })}
+              to={{ pathname: "/about", state: { refreshDate: false } }}
+              >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={classNames({
                 [styles.active]: location.pathname === "/"
               })}
               to="/"
@@ -39,21 +49,6 @@ const Header = () => {
             >
               All
             </Link>
-          </li>
-          <li>
-            <Link
-              className={classNames({
-                [styles.active]: location.pathname === "/about"
-              })}
-              to={{ pathname: "/about", state: { refreshDate: false } }}
-              >
-              About
-            </Link>
-          </li>
-          <li>
-            <a href="https://links.withcheesepls.com">
-              #pelhamparkway
-            </a>
           </li>
         </ul>
       </div>
