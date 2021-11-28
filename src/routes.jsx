@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "pages/Home";
+import New from "pages/New";
 import SinglePost from "pages/SinglePost";
 import NoMatch from "pages/NoMatch";
 import Random from "pages/Random";
@@ -11,8 +11,8 @@ export default function Routes() {
   return (
     <div>
       <Switch>
-        <Route exact path="/">
-          <Home />
+        <Route exact path="/new">
+          <New />
         </Route>
         <Route exact path="/post/:id">
           <SinglePost />
@@ -22,6 +22,9 @@ export default function Routes() {
         </Route>
         <Route exact path="/all">
           <AllPost />
+        </Route>
+        <Route exact path="/">
+          <About />
         </Route>
         <Route exact path="/about">
           <About />

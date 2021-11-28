@@ -23,21 +23,11 @@ const Header = () => {
           <li>
             <Link
               className={classNames({
-                [styles.active]: location.pathname === "/"
+                [styles.active]: location.pathname === "/new"
               })}
-              to="/"
+              to="/new"
             >
               New
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={classNames({
-                [styles.active]: location.pathname === "/random"
-              })}
-              to={{ pathname: "/random", state: { refreshDate: false } }}
-            >
-              Random
             </Link>
           </li>
           <li>
@@ -48,6 +38,16 @@ const Header = () => {
               to={{ pathname: "/all", state: { refreshDate: false } }}
             >
               All
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={classNames({
+                [styles.active]: location.pathname === "/random"
+              })}
+              to={{ pathname: "/random", state: { refreshDate: false } }}
+            >
+              Random
             </Link>
           </li>
         </ul>
